@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maggilicious – Midnight Noodle Club & Tiny Joys</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Theme toggle button pinned to the corner -->
+  <div class="theme-toggle">
+    <button id="theme-toggle" title="Toggle theme">🌙</button>
+  </div>
+
+  <!-- Hero section with cosmic noodles -->
+  <header id="hero">
+    <div class="hero-content">
+      <h1>Midnight Noodle Club</h1>
+      <p>Home of Maggilicious Joys &amp; Tiny Experiences</p>
+      <button id="explore-menu" class="btn">Explore Menu</button>
+    </div>
+  </header>
+
+  <!-- Navigation bar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#lab">Lab</a></li>
+      <li><a href="#game">Game</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+  </nav>
+
+  <!-- Menu classics -->
+  <section id="menu" class="section">
+    <h2>Menu Classics</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="assets/menu1.png" alt="Spicy Starburst Ramen">
+        <h3>Spicy Starburst Ramen</h3>
+        <p>A fiery bowl topped with chili oil, soft‑boiled egg and a swirl of cosmic spice.</p>
+      </div>
+      <div class="menu-item">
+        <img src="assets/menu2.png" alt="Sea Breeze Ramen">
+        <h3>Sea Breeze Ramen</h3>
+        <p>A seafood symphony swimming with prawns, mussels and lunar fishcake.</p>
+      </div>
+      <div class="menu-item">
+        <img src="assets/menu3.png" alt="Garden Miso Ramen">
+        <h3>Garden Miso Ramen</h3>
+        <p>A comforting miso broth with tofu cubes, corn, mushrooms and bok choy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience section -->
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="experience-grid">
+      <!-- Timer tool -->
+      <div class="experience-item timer">
+        <h3>Boil Timer</h3>
+        <label for="timer-input">Minutes:</label>
+        <input type="number" id="timer-input" min="1" value="3">
+        <button id="timer-start" class="btn">Start</button>
+        <div id="timer-display" class="display">03:00</div>
+      </div>
+      <!-- Doodle tool -->
+      <div class="experience-item doodle">
+        <h3>Noodle Doodle</h3>
+        <div class="canvas-tools">
+          <label for="doodle-color">Color:</label>
+          <input type="color" id="doodle-color" value="#ff8800">
+          <button id="doodle-clear" class="btn small">Clear</button>
+          <button id="doodle-save" class="btn small">Save</button>
+        </div>
+        <canvas id="doodle-canvas" width="400" height="300"></canvas>
+      </div>
+      <!-- Curve tool -->
+      <div class="experience-item curve">
+        <h3>Cravings Curve</h3>
+        <canvas id="curve-canvas" width="400" height="200"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Noodle lab -->
+  <section id="lab" class="section">
+    <h2>Noodle Lab</h2>
+    <div class="lab-builder">
+      <button id="lab-random" class="btn">Randomize Recipe</button>
+      <p id="lab-current" class="lab-current"></p>
+      <div class="lab-actions">
+        <button id="lab-save" class="btn small">Save Recipe</button>
+        <button id="lab-copy" class="btn small">Copy JSON</button>
+        <button id="lab-clear" class="btn small">Clear Saved</button>
+      </div>
+      <ul id="lab-saved" class="lab-saved"></ul>
+    </div>
+  </section>
+
+  <!-- Game -->
+  <section id="game" class="section">
+    <h2>Tiny Game: Catch the Noods</h2>
+    <p>Click the moving noodle bowl as many times as you can!</p>
+    <button id="game-start" class="btn">Start Game</button>
+    <div id="game-container" class="game-container">
+      <span id="game-nood" class="hidden">🍜</span>
+    </div>
+    <p>Score: <span id="game-score">0</span></p>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="section">
+    <h2>Shop</h2>
+    <div class="shop-items">
+      <div class="shop-item">
+        <h3>Noodle Kit: Starry Spice</h3>
+        <p>A DIY kit for our signature spicy ramen.</p>
+        <p>$<span class="price">12.99</span></p>
+        <button data-item="starry" class="btn small add-cart">Add to Cart</button>
+      </div>
+      <div class="shop-item">
+        <h3>Broth Lover's Bundle</h3>
+        <p>Three flavours of broth for your creative kitchen.</p>
+        <p>$<span class="price">15.99</span></p>
+        <button data-item="broth" class="btn small add-cart">Add to Cart</button>
+      </div>
+      <div class="shop-item">
+        <h3>Mystery Midnight Box</h3>
+        <p>A surprise assortment of ingredients and treats.</p>
+        <p>$<span class="price">19.99</span></p>
+        <button data-item="mystery" class="btn small add-cart">Add to Cart</button>
+      </div>
+    </div>
+    <h3>Your Cart</h3>
+    <ul id="cart-items" class="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+  </section>
+
+  <!-- Community testimonials -->
+  <section id="community" class="section">
+    <h2>Community Love</h2>
+    <div id="testimonials" class="testimonials">
+      <blockquote>“Best midnight noodle adventure ever!” – Alex</blockquote>
+      <blockquote>“The Noodle Lab let me discover my dream bowl.” – Sam</blockquote>
+      <blockquote>“Addictive game and delicious vibes!” – Jamie</blockquote>
+    </div>
+  </section>
+
+  <!-- Newsletter signup -->
+  <section id="newsletter" class="section">
+    <h2>Join Our Newsletter</h2>
+    <p>Stay updated on fresh recipes and midnight events.</p>
+    <input type="email" id="newsletter-email" placeholder="Your email" required>
+    <button id="newsletter-subscribe" class="btn">Subscribe</button>
+    <p id="newsletter-message" class="newsletter-message"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Maggilicious – All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
